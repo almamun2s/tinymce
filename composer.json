@@ -1,0 +1,36 @@
+{
+    "name": "almamun2s/tinymce",
+    "description": "The Most Trusted and Feature-rich WYSIWYG Rich Text Editor",
+    "keywords": [
+        "tinymce",
+        "editor",
+        "wysiwyg",
+        "laravel"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Abdullah Almamun",
+            "email": "contact4almamun@gmail.com",
+            "homepage": "https://www.facebook.com/almamun2s"
+        }
+    ],
+    "require": {
+        "php": ">=8.2",
+        "illuminate/support": "11.*|12.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Almamun2s\\TinyMCE\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Almamun2s\\TinyMCE\\TinyMCEServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
