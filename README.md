@@ -39,7 +39,7 @@ Update your packages with ```composer update``` or install with ```composer inst
 ## Publish Config
 
 ```
-php artisan vendor:publish --provider="Almamun2s\\TinyMCE\\TinyMCEServiceProvider"
+php artisan vendor:publish --tag=tinymce
 ```
 
 ### TinyMCE WYSIWYG editor (version 7.9.1)

@@ -15,6 +15,10 @@ class TinyMCEServiceProvider extends ServiceProvider
     {
         $path = __DIR__ . '/../config/tinymce.php';
         $this->mergeConfigFrom($path, 'tinymce');
+
+        $this->publishes([
+            $path => config_path('tinymce.php'),
+        ], 'tinymce');
     }
 
     /**
