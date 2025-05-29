@@ -20,6 +20,12 @@ class TinyMCE
     protected $app;
 
     /**
+     * Default data to show in the tinymce
+     * @var string
+     */
+    private string $default = 'Welcome to <b>TinyMCE!</b> This package is Developed by <a href="https://github.com/almamun2s/tinymce">Abdullah Almamun</a>';
+
+    /**
      * This is the tinymce editor name for submitting form
      * @var string
      */
@@ -57,9 +63,12 @@ class TinyMCE
      * @param string $name
      * @return string
      */
-    public function display(array $property = [], array $data = [])
+    public function display(string $default = '', array $property = [], array $data = [])
     {
         $frontendFramework = config('tinymce.frontend_framework');
+        if (!empty($default)) {
+            $this->default     = $default;
+        }
         $this->name        = $property['name'] ?? 'my-wysiwyg' ;
         $this->class       = $property['class'] ?? '';
         $this->id          = $property['id'] ?? '';
@@ -94,7 +103,7 @@ class TinyMCE
                 });
             </script>
             ";
-        $html .= '<textarea name="' . $this->name . '" class="' . $this->class . '" id="' . $this->id . '" ' . $this->renderDataAttributes() . ' >Welcome to <b>TinyMCE!</b> This package is Developed by <a href="https://github.com/almamun2s/tinymce">Abdullah Almamun</a></textarea>';
+        $html .= '<textarea name="' . $this->name . '" class="' . $this->class . '" id="' . $this->id . '" ' . $this->renderDataAttributes() . ' >'. $this->default .'</textarea>';
 
         return $html;
     }
