@@ -57,12 +57,12 @@ class TinyMCE
      * @param string $name
      * @return string
      */
-    public function display(string $name = 'my-textarea', string $class = '', string $id = '', array $data = [])
+    public function display(array $property = [], array $data = [])
     {
         $frontendFramework = config('tinymce.frontend_framework');
-        $this->name        = $name;
-        $this->class       = $class;
-        $this->id          = $id;
+        $this->name        = $property['name'] ?? 'my-wysiwyg' ;
+        $this->class       = $property['class'] ?? '';
+        $this->id          = $property['id'] ?? '';
         $this->data        = $data;
 
         return match ($frontendFramework) {
