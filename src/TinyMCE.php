@@ -63,10 +63,10 @@ class TinyMCE
      * @param string $name
      * @return string
      */
-    public function display(string $default = '', array $property = [], array $data = [])
+    public function display(string|null $default = '', array $property = [], array $data = [])
     {
         $frontendFramework = config('tinymce.frontend_framework');
-        if (!empty($default)) {
+        if ($default !== '' && $default !== null) {
             $this->default     = $default;
         }
         $this->name        = $property['name'] ?? 'my-wysiwyg' ;
