@@ -84,25 +84,25 @@ TINY_MCE_API=[your-api-key]
 ```
 With your default data
 ```php
-    {!! app('tinymce')->display('This if from your code') !!}
+    {!! app('tinymce')->display('This is from your code') !!}
 ```
 With your custom name 
 
 ```php
-    {!! app('tinymce')->display('This if from your code', ['name' => 'my-textarea']) !!}
+    {!! app('tinymce')->display('This is from your code', ['name' => 'my-textarea']) !!}
 ```
 Or, with your custom class 
 ```php
-    {!! app('tinymce')->display('This if from your code', ['class' => 'my-class']) !!}
+    {!! app('tinymce')->display('This is from your code', ['class' => 'my-class']) !!}
 ```
 Or, with your custom id 
 ```php
-    {!! app('tinymce')->display('This if from your code', ['id' => 'my-id']) !!}
+    {!! app('tinymce')->display('This is from your code', ['id' => 'my-id']) !!}
 ```
 
 And you can pass data attributes for sure 
 ```php
-    {!! app('tinymce')->display('This if from your code', ['name' => 'my-product-details'], ['price' => '200', 'quantity' => '15']) !!}
+    {!! app('tinymce')->display('This is from your code', ['name' => 'my-product-details'], ['price' => '200', 'quantity' => '15']) !!}
 ```
 
 
