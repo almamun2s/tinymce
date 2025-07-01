@@ -2,7 +2,6 @@
 
 namespace Almamun2s\TinyMCE;
 
-use Almamun2s\Tinymce\Enum\FrontendFramework;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Foundation\Application;
 
@@ -75,11 +74,11 @@ class TinyMCE
         $this->data        = $data;
 
         return match ($frontendFramework) {
-            FrontendFramework::Blade->value   => $this->laravelBlade(),
-            FrontendFramework::Angular->value => $this->angular(),
-            FrontendFramework::React->value   => $this->react(),
-            FrontendFramework::Vue->value     => $this->vue(),
-            default                           => $this->laravelBlade()
+            'blade'   => $this->laravelBlade(),
+            'react'   => $this->angular(),
+            'vue'     => $this->react(),
+            'angular' => $this->vue(),
+            default   => $this->laravelBlade()
         };
     }
 
